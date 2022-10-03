@@ -2,7 +2,7 @@
 
 set -e
 
-IMAGES="base esp8266 esp32"
+IMAGES="base arm esp8266 esp32"
 
 for IMAGE in $IMAGES
 do

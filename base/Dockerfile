@@ -1,7 +1,16 @@
 FROM ubuntu:22.10
 
 RUN apt update
-RUN apt install -y git make binutils openocd doxygen wget unzip
+RUN apt install -y \
+    git \
+    make \
+    binutils \
+    openocd \
+    doxygen \
+    wget \
+    unzip \
+    python3-serial \
+    gdb-multiarch
 
 ARG RIOT_VERSION=2022.07
 ENV RIOTBASE=/riot
