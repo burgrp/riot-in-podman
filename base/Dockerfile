@@ -15,4 +15,4 @@ RUN touch /bin/fixpath.inc
 ENTRYPOINT [ "/bin/fixpath"]
 CMD ["bash"]
 
-LABEL RUN="podman run --rm -it --env-host -v /home:/home -v /dev:/dev --workdir=\$PWD IMAGE"
+LABEL RUN="podman run --rm -it --name riot --env-host -v /home:/home -v /dev:/dev --workdir=\$PWD IMAGE"

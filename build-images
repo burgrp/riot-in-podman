@@ -8,6 +8,10 @@ for IMAGE in $IMAGES
 do
     echo "Building image: $IMAGE"
     IMAGE_FQN=ghcr.io/burgrp/riot-$IMAGE
-    podman build ./$IMAGE -t $IMAGE_FQN
-    #podman push $IMAGE_FQN
+    podman build ./$IMAGE \
+        --label "org.opencontainers.image.source=https://github.com/burgrp/riot-in-podman" \
+        --label "org.opencontainers.image.description=Riot OS builder - $IMAGE" \
+        --label "org.opencontainers.image.licenses=CC-BY" \
+        --tag $IMAGE_FQN
+    podman push $IMAGE_FQN
 done
