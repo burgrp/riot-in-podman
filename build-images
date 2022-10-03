@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+IMAGES="base esp8266 esp32"
+
+for IMAGE in $IMAGES
+do
+    echo "Building image: $IMAGE"
+    IMAGE_FQN=ghcr.io/burgrp/riot-$IMAGE
+    podman build ./$IMAGE -t $IMAGE_FQN
+    #podman push $IMAGE_FQN
+done
